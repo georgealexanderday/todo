@@ -11,11 +11,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
   };
 
-  outputs =
-    inputs @ { beam-flakes
-    , flake-parts
-    , ...
-    }:
+  outputs = inputs @ { beam-flakes, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ beam-flakes.flakeModule ];
 
